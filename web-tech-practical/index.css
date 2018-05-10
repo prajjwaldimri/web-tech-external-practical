@@ -1,0 +1,260 @@
+/* Color Pallette
+https://flatuicolors.com/palette/in
+*/
+:root {
+  --main-dark: #2c3a47;
+  --main-background: #f7f7f7;
+  --blue-light: #25ccf7;
+  --blue: #1b9cfc;
+  --blue-dark: #182c61;
+  --red: #fd7272;
+  --green-light: #55e6c1;
+  --green-dark: #58b19f;
+  --yellow: #eab543;
+  --magenta: #6d214f;
+}
+
+/* Basic page resets */
+* {
+  /* Removes default padding and margin from components */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 200ms;
+}
+
+html {
+  /* The default font size of browser is 16px. This is changed to 10px. Percentages are used so that the user can still zoom-in or out on the page. */
+  font-size: 62.5%;
+  font-family: sans-serif, serif;
+}
+
+body {
+  /* Changed background to a soothing shade of white */
+  background: var(--main-background);
+  font-size: 1.2rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+/* Validation Related Styles */
+.form input:valid {
+  /* valid pseudo-selector selects those input fields which have valid values in them */
+  border-bottom: 2px solid var(--green-dark);
+}
+
+.form input:invalid {
+  /* invalid pseudo-selector selects those input fields which have invalid values in them */
+  border-bottom: 2px solid var(--red);
+}
+
+.form textarea:valid {
+  /* valid pseudo-selector selects those input fields which have valid values in them */
+  border-bottom: 2px solid var(--green-dark);
+}
+
+.form textarea:invalid {
+  /* invalid pseudo-selector selects those input fields which have invalid values in them */
+  border-bottom: 2px solid var(--red);
+}
+
+/* Aesthetics related styles */
+
+.container {
+  background: linear-gradient(to right bottom, var(--blue), var(--blue-dark));
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* This card contains the form elements */
+.card {
+  background: var(--main-background);
+  min-width: 50rem;
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+}
+
+.card-header {
+  background-color: var(--main-dark);
+  color: white;
+  padding: 3rem;
+  text-align: center;
+}
+
+.card-header h1 {
+  font-weight: 400;
+}
+
+.card-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-footer {
+  padding: 1rem;
+}
+
+.form {
+  /* More on flex here: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.card-content > * {
+  /* Selects all the child elements of the form class and applies a margin on them */
+  margin: 1rem 0;
+}
+
+.form .input-group {
+  width: 80%;
+}
+
+.form .input-group-radio {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid var(--main-dark);
+  padding: 1rem 0;
+  box-shadow: none;
+  width: 100%;
+}
+
+.form textarea {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid var(--main-dark);
+  padding: 1rem 0;
+  box-shadow: none;
+  width: 100%;
+}
+
+.form input:focus + label {
+  /* When any input is focused show its label. */
+  opacity: 0.6;
+  font-size: 1.2rem;
+}
+
+.form input:focus::placeholder {
+  /* When any input is focused hide its placeholder text */
+  color: transparent;
+}
+
+.form textarea:focus + label {
+  /* When any input is focused show its label. */
+  opacity: 0.6;
+  font-size: 1.2rem;
+}
+
+.form textarea:focus::placeholder {
+  /* When any input is focused hide its placeholder text */
+  color: transparent;
+}
+
+.form label {
+  display: block;
+  color: var(--main-dark);
+  width: 100%;
+  opacity: 0;
+  font-size: 0;
+}
+
+/* Input groups */
+.input-group-radio {
+  width: 80% !important;
+}
+
+.input-group-radio input {
+  width: 50%;
+}
+
+.input-group-radio label:first-child {
+  color: black;
+  font-size: 1.4rem;
+  opacity: 0.6;
+}
+
+.input-group-select {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+}
+
+.input-group-select select {
+  width: 100%;
+}
+
+.input-group-select label.select-label {
+  opacity: 1;
+  font-size: 1.4rem;
+  width: 50%;
+}
+
+/* Footer */
+.card-footer {
+  text-align: center;
+}
+
+.card-footer .button {
+  border: none;
+  padding: 1rem 3rem;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#submit_button {
+  background-color: var(--green-dark);
+}
+
+#submit_button:hover {
+  background-color: darkcyan;
+}
+
+#reset_button {
+  background-color: var(--red);
+}
+
+#reset_button:hover {
+  background-color: darkred;
+}
+
+.card-footer .button:hover {
+  background-color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Increase the width of card on mobile devices */
+  .card {
+    width: 90%;
+  }
+}
